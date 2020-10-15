@@ -7,7 +7,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Types\" />
-    <Folder Include="Schema\" />
+    <Folder Include="Schemas\" />
   </ItemGroup>
 
   <ItemGroup>
