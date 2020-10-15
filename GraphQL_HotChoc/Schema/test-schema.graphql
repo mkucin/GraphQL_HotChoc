@@ -1,0 +1,41 @@
+﻿schema {
+    query: Query
+    mutation: Mutation
+    subscription: Subscription
+}
+
+type Query {
+    "Dies ist ein Fahrzeug"
+    fahrzeug: Fahrzeug
+    "Dies ist eine Maschine"
+    maschine: Maschine
+    "Dies sind alle Fahrzeuge"
+    fuhrpark(fid: Int, name_contains: String): [Fahrzeug]
+}
+
+"Fahrzeugbeschreibung"
+type Fahrzeug {
+    id: Int! 
+    name: String!
+}
+
+"Maschinenbeschreibung"
+type Maschine {
+    id: Int!
+    name: String!
+}
+
+type Mutation{
+    updateFahrzeug(fahrzeug: FahrzeugIn!): Fahrzeug
+}
+
+input FahrzeugIn {
+    id: Int!
+    name: String!
+}
+
+type Subscription {
+    "onFahrzeugUpdated: Fahrzeug"
+    onMessageReceived: Fahrzeug
+}
+
